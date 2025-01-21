@@ -18,6 +18,9 @@ export default async function Page(props:{
     const currentPage = Number(searchParams?.page) || 1;
     const totalPages = await fetchInvoicesPages(query);
 
+    // Log the constructed URL for debugging
+    console.log(`Fetching invoices for query: ${query}, page: ${currentPage}`);
+
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
